@@ -7,13 +7,7 @@ sentencepiece
 accelerate
 sse-starlette
 streamlit>=1.24.0
-<<<<<<< HEAD
-fastapi==0.95.1
-typing_extensions
-uvicorn
-=======
 fastapi>=0.95.1
 uvicorn~=0.24.0
->>>>>>> main
 sse_starlette
 loguru~=0.7.2
