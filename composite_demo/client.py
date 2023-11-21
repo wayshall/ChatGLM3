@@ -13,7 +13,8 @@ from conversation import Conversation
 
 TOOL_PROMPT = 'Answer the following questions as best as you can. You have access to the following tools:'
 
-MODEL_PATH = os.environ.get('MODEL_PATH', 'THUDM/chatglm3-6b')
+# MODEL_PATH = os.environ.get('MODEL_PATH', 'THUDM/chatglm3-6b')
+MODEL_PATH = os.environ.get('MODEL_PATH', '/home/jack/llmmodels/chatglm3-6b')
 PT_PATH = os.environ.get('PT_PATH', None)
 TOKENIZER_PATH = os.environ.get("TOKENIZER_PATH", MODEL_PATH)
 
@@ -116,6 +117,7 @@ class HFClient(Client):
         else:
             self.model = AutoModel.from_pretrained(model_path, trust_remote_code=True)
 
+        # self.model = self.model.cuda().eval()
         self.model = self.model.to(
             'cuda' if torch.cuda.is_available() else
             'mps' if torch.backends.mps.is_available() else

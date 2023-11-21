@@ -230,7 +230,8 @@ async def predict(model_id: str, params: dict):
 
 if __name__ == "__main__":
 
-    model_path = "THUDM/chatglm3-6b"
+    # model_path = "THUDM/chatglm3-6b"
+    model_path = "/home/jack/llmmodels/chatglm3-6b"
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
     model = AutoModel.from_pretrained(model_path, trust_remote_code=True).cuda()
 
